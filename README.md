@@ -1,99 +1,77 @@
-## Deep Learning Advanced Sequence Models
 
-This project is a deep learning system designed to automatically tag content using a Convolutional Neural Network (CNN). It processes text data, specifically questions from Stack Overflow, to predict associated tags.
+# Deep Learning Convolutional Neural Network for Auto-Tagging
 
-### Project Structure
+This repository contains a machine learning project that uses a Convolutional Neural Network (CNN) to automatically tag Stack Overflow questions.
 
-- `data/`: This directory contains the datasets `Questions.csv` and `Tags.csv` necessary for the model.
-- `source/`: Contains the Python script `autotaggingsystemcnn.py` and Jupyter notebook `autotaggingsystemcnn.ipynb` for the tagging system.
-- `weights.best.hdf5`: The saved model weights after training.
-- `myenv/`: Suggested directory for a Python virtual environment.
-- `README.md`: This file, containing information about the project.
-- `LICENSE`: The license file for the project.
-- `.gitignore`: Specifies intentionally untracked files to ignore.
+## Getting Started
 
+### Prerequisites
+
+Before running the project, ensure that you have the following prerequisites installed:
+
+- Python 3.x
+- pip (Python package installer)
 
 ### Installation
 
-To set up the project environment:
+Clone the repository to your local machine and navigate to the cloned directory. Set up a virtual environment and activate it:
 
-1. Clone this repository.
-2. Create a virtual environment:
-   ```
-   python3 -m venv myenv
-   ```
-3. Activate the virtual environment:
-   - On macOS and Linux:
-     ```
-     source myenv/bin/activate
-     ```
-   - On Windows:
-     ```
-     myenv\Scripts\activate
-     ```
-4. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-
-# requirements.txt
-
+```bash
+python3 -m venv myenv
+source myenv/bin/activate  # On macOS and Linux
+myenv\Scripts\activate     # On Windows
 ```
-pandas
-numpy
-beautifulsoup4
-matplotlib
-scikit-learn
-tensorflow
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
 ```
+
+### Data
+
+The datasets are compressed in a zip file within the `data` folder. To unzip and access the files, run the provided code in the `autotaggingsystemcnn.py` script, which will extract the contents for use.
 
 ### Usage
 
-Execute the script using Python:
+After setting up the environment and data, you can run the Python script or Jupyter notebook to train the model and make predictions.
 
-```
+```bash
 python source/autotaggingsystemcnn.py
+# or
+jupyter notebook notebook/autotaggingsystemcnn.ipynb
 ```
 
-Or open the Jupyter notebook:
+### Steps to Follow
 
-```
-jupyter notebook source/autotaggingsystemcnn.ipynb
-```
+1. **Load Data and Import Libraries**: Load the necessary libraries and the Stack Overflow dataset.
+2. **Text Cleaning**: Preprocess the text data to remove HTML tags and non-alphabetic characters.
+3. **Merge Tags with Questions**: Combine the question and tag data for model training.
+4. **Dataset Preparation**: Prepare the dataset by selecting the most frequent tags.
+5. **Text Representation**: Convert text data into a numerical format that can be fed into the CNN.
+6. **Model Building**: 
+   - Define the CNN model architecture.
+   - Train the model on the prepared dataset.
+7. **Model Predictions**: Use the trained model to predict tags for new questions.
+8. **Model Evaluation**: Evaluate the model's performance using metrics like F1 score.
+9. **Inference**: Predict tags for new data inputs.
 
-### Steps to Follow in the Script
+### Project Structure
 
-1. Load Data and Import Libraries.
-2. Perform Text Cleaning on the dataset.
-3. Merge Tags with Questions for combined processing.
-4. Prepare the Dataset for the neural network.
-5. Create Text Representations suitable for input into the model.
-6. Build the Model with CNN architecture.
-7. Train the Model on the data.
-8. Predict tags for new data.
-9. Evaluate the Model's performance.
-10. Perform Inference to tag new questions.
-
-### Requirements
-
-The project requires Python 3 and the following libraries:
-
-- `re` (built-in)
-- `pandas`
-- `numpy`
-- `BeautifulSoup` from `bs4`
-- `matplotlib`
-- `sklearn`
-- `keras` from `tensorflow`
+- `data/`: Contains the datasets and the zip file.
+- `myenv/`: Recommended directory for the Python virtual environment.
+- `notebook/`: Contains the Jupyter notebook for the project.
+- `source/`: Contains the Python script for the project.
+- `weights.best.hdf5`: Model weights saved during training.
+- `requirements.txt`: Required Python packages for the project.
+- `README.md`: Documentation for the project.
 
 ### Contributing
 
-Contributions to this project are welcome. Please ensure you follow the guidelines in the `LICENSE`.
+We welcome contributions to improve this project. Please feel free to fork the repository and submit pull requests.
 
 ### License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
